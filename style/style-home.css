@@ -168,12 +168,16 @@
         font-size: 2rem;
         color: rgb(14, 168, 130);
     }
+    p{
+        font-size: 14px;
+    }
 }
 .icons{
     width: 300px;
     display: flex;
     justify-content: space-evenly;
-    font-size: 28px;
+    margin-top: 10px;
+    font-size: 24px;
 }
 .icons i:hover{
     cursor: pointer;
@@ -197,8 +201,9 @@ form{
 
 .form-register input{
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 7px;
     width: 400px;
+    margin-left: -8px;
     border-radius: 20px;
     border-style: none;
     font-size: 12px;
@@ -213,6 +218,7 @@ button{
     color: white;
     border-style: none;
     padding: 10px;
+    margin-top: -20px;
     border-radius: 20px;
     width: 400px;
     transition: transform .5s;
@@ -222,15 +228,20 @@ button:hover{
     cursor: pointer;
     transform: scale(.9);
 }
+
 .loginTo{
     position: relative;
     bottom: 10px;
+}
+.loginTo p{
+    font-size: 14px;
 }
 .loginTo a{
     text-decoration: none;
     font-weight: 600;
     color:  rgb(14, 168, 130);
 }
+
 /* login*/
 .wrapper-form{
     width: 700px;
@@ -267,10 +278,10 @@ button:hover{
 .login-form span{
     color: rgb(15, 167, 129);
 }
+
 .login-form input{
     width: 400px;
     height: 30px;
-    margin-top: 10px;
     border-style: solid;
     border-width: 1px;
     border-radius: 20px;
@@ -283,18 +294,21 @@ button:hover{
     align-items: center;
 }
 .remember input{
-    width: 20px;    
+    width: 15px; 
+
 }
 .remember label{
     position: relative;
-    left: 10px;
-    top: 5px;
+    left: 5px;
+    font-size: 14px;
+    margin-top: -10px;
 }
 
 .remember a{
     position: relative;
-    left: 165px;
-    top: 5px;
+    left: 200px;
+    top: -20px;
+    font-size: 13px;
     text-decoration: none;
 }
 .remember a:hover{
@@ -370,7 +384,6 @@ button:hover{
     padding-top: 10px;
 }
 .sidebar a{
-
     margin-top: 50px;
     text-decoration: none;
     width: 100%;
@@ -401,8 +414,7 @@ button:hover{
     font-size: 50px;
 }
 .profile-image{
-
-    width: 50px;
+    width: 60px;
     position: relative;
     top: 30px;
 }
@@ -415,12 +427,11 @@ button:hover{
     font-size: 15px;
 }
 
-.wrapper-admin{
-    
+.wrapper-admin{ 
     width: 1100px;
     color: black;
     margin: 0 auto;
-    margin-left: 190px;
+    margin-left: 220px;
     height: 100vh;
     padding: 20px;
     padding-bottom: 20px;
@@ -431,9 +442,8 @@ button:hover{
     height: 50px;
 }
 .notes h1{
-    text-decoration: underline rgb(15, 167, 129) ; ;
+    text-decoration: underline rgb(15, 167, 129) ;
     font-size: 25px;
-  
 }
 .searchbar{
     display: flex;
@@ -509,10 +519,9 @@ button:hover{
     color: yellow;
     font-size: 20px;
 }
- /* small */
+
  @media (max-width: 600px) {
     
-    /* login */
     .wrapper-form {
         width: 500px;
        height: 500px;
@@ -893,15 +902,19 @@ button:hover{
     .notes h1{
         font-size: 1.7rem;
     }
-    .searchbar{
+    .searchbar {
         position: relative;
-        right: 10px;
-    }
-    .searchbar input{
+        display: flex;
+        flex-direction: row;
+        border: solid;
+      }
+    
+      .searchbar input {
         width: 320px;
         height: 20px;
         border-radius: 30px;
-    }
+      }
+
     .notes{
 
         justify-content: space-between;
@@ -915,7 +928,7 @@ button:hover{
         width: 1500px;
         height: 950px;
         gap: 30px;
-        margin-left: 20px;
+        margin-left: 30px;
         padding-bottom: 20px;
     }
 
@@ -929,13 +942,93 @@ button:hover{
         top: 60px;
     }
 
-    /* register */
     .container{
         width: 80%;
     }
 
-    /* login */
     .login-form{
         top: 0;
     }
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    height: 65%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keep content at top, buttons at bottom */
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    padding: 20px;
+    margin-top: 20px;
+    position: sticky;
+    bottom: 0;
+    background-color: white; 
+    z-index: 10;
+  }
+  
+  .save-btn, .cancel-btn {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+    background: rgb(15, 167, 129) ;;
+  }
+  
+
+  #openModalBtn {
+    font-size: 24px;
+    cursor: pointer;
+    color:  rgb(15, 167, 129);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+.add-notes{
+    margin-top: -8px;
+}
+
+  input, textarea {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($user['u_type'] == 'admin') {
                 header("Location: adminDash.php"); 
             } else {
-                header("Location: admin.php"); 
+                header("Location: Dashboard.php"); 
             }
             exit;
         } else {
@@ -63,9 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h1>Note<span>It!</span></h1>
                 <br>
                 <label for="username">Username</label> <br>
-                <input type="text" id="username" name="username" placeholder="Username" required> <br><br>
+                <input type="text" id="username" name="username" placeholder="Username"> <br><br>
                 <label for="password">Password</label><br>
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="password" name="password" placeholder="Password">
 
                 <div class="remember">
                     <input type="checkbox" id="sign-checkbox" name="sign-checkbox">
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br>
 
                 <?php if ($error): ?>
-                    <p style="color: red;"><?php echo $error; ?></p>
+                    <p style="color: red; display:flex; justify-content:center; font-size: 14px; margin-top: -40px; margin-bottom: 10px;"><?php echo $error; ?></p>
                 <?php endif; ?>
 
                 <div class="btn-sign">
